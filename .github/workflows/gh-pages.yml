@@ -36,6 +36,7 @@ jobs:
       run: |
         git config --global user.name "M0209"
         git config --global user.email "masanorimurakoshi0209@gmail.com"
+        git remote set-url origin https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
       
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
