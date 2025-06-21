@@ -11,7 +11,7 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "format:check": "prettier --check \"src/**/*.{ts,tsx,js,jsx,json,css,md}\"",
     "preview": "vite preview",
-    "deploy": "cross-env NODE_OPTIONS='--max_old_space_size=4096' gh-pages -d dist"
+    "deploy": "cross-env NODE_OPTIONS='--max_old_space_size=4096' gh-pages -d docs"
   },
   "dependencies": {
     "@tanstack/react-virtual": "^3.13.10",
