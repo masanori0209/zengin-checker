@@ -442,7 +442,7 @@ const ZenginTable: React.FC<ZenginTableProps> = ({ parseResult, onClearData, onR
             {viewMode === 'table' ? (
               <VirtualizedTable
                 records={filteredRecords}
-                onRecordChange={(filteredIndex, updatedRecord) => {
+                onRecordChange={(_, updatedRecord) => {
                   // フィルタリングされた配列のインデックスから元の配列のインデックスを取得
                   const originalIndex = parseResult.parsedRecords.findIndex(
                     record => record.lineNumber === updatedRecord.lineNumber
