@@ -2,9 +2,14 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master, main ]
+    branches: [ main ]
   pull_request:
-    branches: [ master, main ]
+    branches: [ main ]
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
 
 jobs:
   build-and-deploy:
@@ -26,8 +31,14 @@ jobs:
     - name: Build
       run: npm run build
       
+    - name: Configure Git
+      if: github.ref == 'refs/heads/main'
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+      
     - name: Deploy to GitHub Pages
-      if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
+      if: github.ref == 'refs/heads/main'
       run: npm run deploy
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
