@@ -34,8 +34,8 @@ jobs:
     - name: Configure Git
       if: github.ref == 'refs/heads/main'
       run: |
-        git config --global user.name "github-actions[bot]"
-        git config --global user.email "github-actions[bot]@users.noreply.github.com"
+        git config --global user.name "M0209"
+        git config --global user.email "masanorimurakoshi0209@gmail.com"
       
     - name: Deploy to GitHub Pages
       if: github.ref == 'refs/heads/main'
